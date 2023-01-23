@@ -6,18 +6,19 @@ The property values for Zillow will be investigated using a variety of target va
  
 # Project Goal
  
-* Find drivers for customer churn at Telco. Why are customers churning?
-* Construct a ML classification model that accurately predicts customer churn.
-* Deliver a report that a non-data scientist can read through and understand what steps were taken, why and what was the outcome?
+* Construct an ML Regression model that predicts propery tax assessed values of Single Family Properties using features of the properties.
+* Find the key drivers of property value for single family properties. 
+* Deliver a report that explains what steps were taken, why and what the outcome was.
+* Make recommendations on what works or doesn't work in predicting these homes' values.
 
  
 # Initial Thoughts
  
-My initial hypothesis is that drivers of churn will depend on the type of service used by a customer and the amount of the montly payments.
+My initial hypothesis is that the property value will increase with square footage and the number of bedrooms and bathrooms.
  
 # The Plan
  
-* Aquire data from telco_churn database
+* Aquire data from zillow database
  
 * Prepare data
    * Cleaned up data
@@ -29,14 +30,13 @@ My initial hypothesis is that drivers of churn will depend on the type of servic
        * Dropped null values  
        * split the data  
  
-* Explore data in search of drivers of upsets
+* Explore data in search of drivers of property value
    * Answer the following initial questions
        * Does the square footage of a property increase, decrease, or is irrelevant in 
          determining the property value.
-       * What number of bedrooms is optimal for the property value of a house
+       * What number of bedrooms is optimal for the property value of a house?
        * Does the number of bathrooms increase the property value?
-       * Does the zipcode effect the lot size and is this a determining factor in the 
-         property value.
+       * Is there an optimal square footage for property value?
       
 * Develop a Model to predict the property value of a house
    * Use drivers identified in explore to build predictive models of different types
@@ -116,25 +116,15 @@ My initial hypothesis is that drivers of churn will depend on the type of servic
 4) Run notebook.
  
 # Takeaways and Conclusions
-* About 43% of customers with fiber optic churned.
-* About 13% of customers without fiber optic churned.
-* It is more likely that customers who have fiber optic churned versus customers who did not have fiber optic.
-* Month to month contracts have the highest level of churn.
-* One year contracts are the next highest, but still relatively low churn.
-* Two year contracts have the lowest level of churn.
-* While it is no surprise that month to month contracts produce the highest level of churn, the drastic drop from month to month to one       year and two year contracts should be looked at and possible incentives or discounts for the one year and two year contracts could reduce   the amount of month to month contracts and level of churn.
-* Customers with online security have 17% churn rate.
-* Customers with no internet service have an 11% churn rate.
-* Customers withouth online security have a 40% churn rate.
-* The major contributor for customer churn is more correlated with internet services that provide security such as tech support, device       protection, online backup, and online security.
-* Other services for entertainment purposes such as streaming tv and movies had less of an impact on customer churn.
-* As charges increase, churn increases until the rate reaches over 100 dollars.
-* The largest proportion of customers spent between 20-30 dollars.
-* It would appear that the more money that was spent by the customer, the more likely they are to churn.
-* The large majority of those that churned spent 500 dollars or less on total charges.
-* Those customers who spent about 80 dollars a month were the most likely to churn.
-* Total charges produced insufficient data to support a correlation between total charges and churn.
+* Bathrooms, bedrooms, and square footage are the top three features with the strongest correlation.
+    * Square footage has the strongest correlation of all the features.
+* There is a moderate corellation between square footage and property value. 
+    * Further investigation into size of the property and its value is necessary in determing the optimal square footage.
+* There is a slight correlation between the number of bedrooms and property value. It is difficult to determine the maximum number of bedrooms based on the chart.
+* The optimal number of bathrooms to optimize property value appears to be 3.5. However more investigation is required to confirm this finding. Further analysis on optimizing the cost of building a property, location, and comparing that the total value of the propery is neccessary.
+* The optimal square footage is between 1001-2000 square feet. However, there is a moderate negative correlation and the large number of homes within this range could be causing this correlation.
  
 # Recommendations
-* To reduce churn decrease the amount of month to month contracts and increase the amount of one and two year contracts.
-* Provide online security to all of the customers, this area produced the highest probability of customer churn.
+* The square footage of a house appears to be optimal between 1000-2000 square feet.
+* The number of bedrooms does not apeear to be a significant factor in determining the property value. However, targeted analysis on specific bedroom counts could produce different conclusions.
+* The number of optimal bathrooms appears to be 3.5, although more analysis into the increase in value is necessarry to confirm this conclusion.
